@@ -1,0 +1,151 @@
+section.intro {
+  height: 70vh;
+  background-image: url("../img/background.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
+
+section.intro h4 {
+  color: #fff;
+  font-size: 22px;
+}
+
+section.intro h1 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+}
+section.intro .btn-participate {
+  background-color: #fff;
+  color: #006e26;
+  border-radius: 0;
+  padding: 12.5px 50px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+section.participate {
+  background: rgb(0, 127, 45);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 127, 45, 1) 0%,
+    rgba(0, 127, 45, 1) 0%,
+    rgba(0, 70, 18, 1) 100%
+  );
+
+  padding: 80px 0;
+  text-align: center;
+}
+
+section.participate h2 {
+  color: #fff;
+  font-weight: bold;
+}
+
+section.participate .text {
+  color: #fff;
+  margin-top: 20px;
+}
+
+section.participate .items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+section.participate .item {
+  width: 30%;
+  max-width: 400px;
+  margin: 20px;
+}
+
+section.participate .item .icon {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background-color: #004815;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  margin: 15px auto;
+}
+section.participate .item .icon img {
+  width: 40px;
+}
+section.participate .item .desc {
+  background-color: #004815;
+  min-height: 125px;
+  border: 1px solid #fff;
+  padding: 25px 35px;
+  width: 100%;
+  color: #fff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.participate .item .desc p {
+  margin: 0;
+}
+section.prizes {
+  padding: 80px 0;
+  text-align: center;
+}
+section.prizes h2 {
+  color: #005d1f;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+section.prizes .items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section.prizes .items .item {
+  border-radius: 20px;
+  max-width: 250px;
+  width: 100%;
+  padding: 20px;
+}
+
+section.prizes .text {
+  margin: 40px 0;
+  font-size: 20px;
+}
+
+section.prizes .btn-participate {
+  background-color: #006e26;
+  color: #fff;
+  border-radius: 0;
+  padding: 12.5px 50px;
+  margin-top: 10px;
+}
+@media screen and (max-width: 992px) {
+  section.intro h4 {
+    color: #fff;
+    font-size: 18px;
+  }
+  section.intro h1 {
+    font-size: 25px;
+  }
+  section.intro .btn-participate {
+    padding: 7.5px 40px;
+  }
+  section.prizes .items .item {
+    border-radius: 20px;
+    max-width: 250px;
+    width: 50%;
+    padding: 5px;
+  }
+}

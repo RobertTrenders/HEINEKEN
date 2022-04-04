@@ -1,0 +1,99 @@
+section.register {
+  background: rgb(0, 127, 45);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 127, 45, 1) 0%,
+    rgba(0, 127, 45, 1) 0%,
+    rgba(0, 70, 18, 1) 100%
+  );
+  padding: 40px 0;
+  padding-top: 120px;
+}
+section.register h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+section.register form {
+  margin: 30px auto;
+  max-width: 500px;
+}
+
+section.register form input[type="text"],
+section.register form input[type="number"],
+section.register form textarea {
+  background-color: #004815;
+  padding: 25px 10px;
+  border: 1px solid #fff;
+  border-radius: 0;
+  color: #fff !important;
+  margin-bottom: 25px !important;
+}
+section.register form select {
+  background-color: #004815;
+  padding: 10px 10px;
+  border: 1px solid #fff;
+  border-radius: 0;
+  color: #fff !important;
+  height: 52px;
+  margin-bottom: 25px !important;
+}
+section.register form option {
+  color: #fff !important;
+}
+section.register form textarea {
+  padding: 10px;
+}
+section.register form input[type="text"]:focus,
+section.register form input[type="number"]:focus,
+section.register form textarea:focus,
+section.register form select:focus {
+  background-color: #004815;
+}
+
+section.register form input[type="text"]::placeholder,
+section.register form input[type="number"]::placeholder,
+section.register form textarea::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
+section.register form input[type="text"]::-ms-input-placeholder,
+section.register form input[type="number"]::-ms-input-placeholder,
+section.register form textarea::-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #fff;
+}
+
+section.register form input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #fff;
+}
+
+section.register form #checkbox-terms {
+  font-size: 20px;
+  color: #fff;
+}
+section.register form #checkbox-terms a {
+  color: #fff;
+  text-decoration: underline;
+}
+section.register form #checkbox-terms input {
+  width: 20px;
+  height: 20px;
+  margin-left: -2.25rem !important;
+}
+
+section.register form .btn-submit {
+  background-color: #fff;
+  color: #006e26;
+  border-radius: 0;
+  padding: 12.5px 50px;
+  margin: 30px auto;
+  text-align: center;
+}
+@media screen and (max-width: 992px) {
+}
