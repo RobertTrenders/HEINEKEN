@@ -1,6 +1,5 @@
 section.intro {
   height: 70vh;
-  background-image: url("../img/background.png");
   background-size: cover;
   background-position: center;
   display: flex;

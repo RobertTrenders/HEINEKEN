@@ -7,7 +7,7 @@ use App\Http\Controllers\admin\DashboardController;
 
 //FRONTEND
 use App\Http\Controllers\frontend\HomeController;
-
+use App\Http\Controllers\frontend\ParticipantController;
 /*
   |--------------------------------------------------------------------------
   | Web Routes
@@ -20,7 +20,7 @@ use App\Http\Controllers\frontend\HomeController;
  */
 
 Route::get('/', function () {
-    return redirect('/admin/dashboard');
+    return redirect('/home');
 });
 
 Route::get('/admin', function () {
@@ -43,3 +43,6 @@ Route::prefix('admin')->group(function () {
 //FRONTEND
 
 Route::get('home', [HomeController::class, 'index'])->name('home');
+Route::get('register', [ParticipantController::class, 'create'])->name('register');
+Route::post('register_store', [ParticipantController::class, 'store'])->name('register_store');
+// Route::resource('form', ParticipantController::class);

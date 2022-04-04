@@ -1,7 +1,15 @@
 <footer>
-
-    <div class="container text-center">
-        <a href="" target="_blank">Términos y condiciones - Politica de cookies - Politica de privacidad</a>
+    <div class="links">
+        <a href="https://www.facebook.com/heineken" target="_blank" class="link"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/heineken_ar/" target="_blank" class="link"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/user/heineken" target="_blank" class="link"><i class="fab fa-youtube"></i></a>
+        <a href="https://twitter.com/heineken_ar" target="_blank" class="link"><i class="fab fa-twitter"></i></a>
     </div>
-    <!-- /.container -->
+    <div class="logo">
+        <img src="{{ asset('/img/heineken-logo.png') }}" alt="" class="img-fluid">
+    </div>
+    <div class="champions">
+        <img src="{{ asset('/img/champions.png') }}" alt="">
+        <img src="{{ asset('/img/championsleague.png') }}" alt="">
+    </div>
 </footer>
