@@ -4,10 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 //BACKEND
 use App\Http\Controllers\admin\DashboardController;
-
+use App\Http\Controllers\admin\ParticipantController as AdminParticipantController;
 //FRONTEND
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\ParticipantController;
+use App\Http\Controllers\frontend\AgeController;
 /*
   |--------------------------------------------------------------------------
   | Web Routes
@@ -35,14 +36,26 @@ Route::prefix('admin')->group(function () {
 
     Route::middleware(['auth'])->group(function () {
 
+        //DASHBOARD
         Route::resource('dashboard', DashboardController::class);
+
+        //PARTICIPANTS
+        Route::resource('participant_list', AdminParticipantController::class);
+        Route::get('get_participants', [AdminParticipantController::class, 'getParticipants'])->name('get_participants');
+        Route::get('participant_export', [AdminParticipantController::class, 'export'])->name('participant_export');
     });
 });
 
 
 //FRONTEND
 
-Route::get('home', [HomeController::class, 'index'])->name('home');
-Route::get('register', [ParticipantController::class, 'create'])->name('register');
-Route::post('register_store', [ParticipantController::class, 'store'])->name('register_store');
-// Route::resource('form', ParticipantController::class);
+Route::middleware(['checkguest'])->group(function () {
+    Route::middleware(['age'])->group(function () {
+        Route::get('home', [HomeController::class, 'index'])->name('home');
+        Route::get('register', [ParticipantController::class, 'create'])->name('register');
+        Route::post('register_store', [ParticipantController::class, 'store'])->name('register_store');
+    });
+
+    Route::get('age', [AgeController::class, 'index'])->name('age');
+    Route::post('age_store', [AgeController::class, 'store'])->name('age_store');
+});

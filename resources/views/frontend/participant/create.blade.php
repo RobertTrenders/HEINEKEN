@@ -68,7 +68,7 @@
             </div>
 
             <div class="form-check text-center" id="checkbox-terms">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <input class="form-check-input {{ $errors->has('terms') ? ' is-invalid' : '' }}" type="checkbox" value="1" name="terms" id="defaultCheck1">
                 <label class="form-check-label" for="defaultCheck1">
                     Acepto <a href="">Bases y Condiciones</a>
                 </label>

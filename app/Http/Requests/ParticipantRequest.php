@@ -31,6 +31,7 @@ class ParticipantRequest extends FormRequest
             'dni' => 'required|numeric|digits_between:8,8',
             'phone' => 'required|numeric|digits_between:10,10',
             'objective' => 'required|min:3|max:255',
+            'terms' => 'required|boolean',
         ];
 
         return $aRules;

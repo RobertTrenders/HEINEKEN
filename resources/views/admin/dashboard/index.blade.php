@@ -38,8 +38,7 @@
                                         <span class="dashboard_totals">999</span>
                                     </div>
                                 </div>
-                                <a class="card-footer text-white clearfix small z-1"
-                                   href="">
+                                <a class="card-footer text-white clearfix small z-1" href="">
                                     <span class="float-left">Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -59,8 +58,7 @@
                                         <span class="dashboard_totals">999</span>
                                     </div>
                                 </div>
-                                <a class="card-footer text-white clearfix small z-1"
-                                   href="">
+                                <a class="card-footer text-white clearfix small z-1" href="">
                                     <span class="float-left">Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -80,8 +78,7 @@
                                         <span class="dashboard_totals">999</span>
                                     </div>
                                 </div>
-                                <a class="card-footer text-white clearfix small z-1"
-                                   href="">
+                                <a class="card-footer text-white clearfix small z-1" href="">
                                     <span class="float-left">Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -101,8 +98,7 @@
                                         <span class="dashboard_totals">999</span>
                                     </div>
                                 </div>
-                                <a class="card-footer text-white clearfix small z-1"
-                                   href="">
+                                <a class="card-footer text-white clearfix small z-1" href="">
                                     <span class="float-left">Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -122,8 +118,7 @@
                                         <span class="dashboard_totals">999</span>
                                     </div>
                                 </div>
-                                <a class="card-footer text-white clearfix small z-1"
-                                   href="">
+                                <a class="card-footer text-white clearfix small z-1" href="">
                                     <span class="float-left">Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -143,8 +138,7 @@
                                         <span class="dashboard_totals">999</span>
                                     </div>
                                 </div>
-                                <a class="card-footer text-white clearfix small z-1"
-                                   href="">
+                                <a class="card-footer text-white clearfix small z-1" href="">
                                     <span class="float-left">Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -164,8 +158,7 @@
                                         <span class="dashboard_totals">999</span>
                                     </div>
                                 </div>
-                                <a class="card-footer text-white clearfix small z-1"
-                                   href="">
+                                <a class="card-footer text-white clearfix small z-1" href="">
                                     <span class="float-left">Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -186,7 +179,7 @@
         <footer class="sticky-footer">
             <div class="container">
                 <div class="text-center">
-                    <small>Laravel Base 2022</small>
+                    <small>Heineken 2022</small>
                 </div>
             </div>
         </footer>
