@@ -6,7 +6,7 @@ $(document).ready(function () {
     columns: [
       { data: "id", class: "dt-center" },
       { data: "name", class: "dt-center" },
-      { data: "last_name", class: "dt-center" },
+      { data: "email", class: "dt-center" },
       { data: "dni", class: "dt-center" },
       { data: "phone", class: "dt-center" },
       { data: "team", class: "dt-center" },

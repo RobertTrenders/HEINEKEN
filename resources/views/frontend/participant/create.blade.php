@@ -1,5 +1,5 @@
 @extends('frontend/layouts.app')
-@include('frontend/layouts.header')
+
 @section('content')
 <link rel="stylesheet" href="{{ asset('/css/frontend/register.css') }}">
 
@@ -11,14 +11,11 @@
             <div class="form-group ">
                 <select name="team" class="form-control {{ $errors->has('team') ? ' is-invalid' : '' }}" id="">
                     <option value="">Elegí tu equipo</option>
-                    <option {{ old('team') == "Benfica" ? 'selected' : '' }} value="Benfica">Benfica</option>
-                    <option {{ old('team') == "Liverpool" ? 'selected' : '' }} value="Liverpool">Liverpool</option>
-                    <option {{ old('team') == "Villarreal" ? 'selected' : '' }} value="Villarreal">Villarreal</option>
-                    <option {{ old('team') == "Bayern" ? 'selected' : '' }} value="Bayern">Bayern</option>
-                    <option {{ old('team') == "Manchester City" ? 'selected' : '' }} value="Manchester City">Manchester City</option>
-                    <option {{ old('team') == "Atlético" ? 'selected' : '' }} value="Atlético">Atlético</option>
-                    <option {{ old('team') == "Chelsea" ? 'selected' : '' }} value="Chelsea">Chelsea</option>
-                    <option {{ old('team') == "Real Madrid" ? 'selected' : '' }} value="Real Madrid">Real Madrid</option>
+                    @if(!empty($aTeams))
+                    @foreach($aTeams as $oTeam)
+                    <option {{ old('team') == $oTeam->id ? 'selected' : '' }} value="{{ $oTeam->id }}">{{ $oTeam->name }}</option>
+                    @endforeach
+                    @endif
                 </select>
                 @if ($errors->has('team'))
                 <span class="invalid-feedback" role="alert">
@@ -27,7 +24,7 @@
                 @endif
             </div>
             <div class="form-group">
-                <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" id="name" value="{{ old('name') }}" name="name" placeholder="Nombre">
+                <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" id="name" value="{{ old('name') }}" name="name" placeholder="Nombre y Apellido">
                 @if ($errors->has('name'))
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('name') }}</strong>
@@ -35,10 +32,10 @@
                 @endif
             </div>
             <div class="form-group">
-                <input type="text" class="form-control {{ $errors->has('last_name') ? ' is-invalid' : '' }}" id="last_name" value="{{ old('last_name') }}" name="last_name" placeholder="Apellido">
-                @if ($errors->has('last_name'))
+                <input type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" value="{{ old('email') }}" name="email" placeholder="Email">
+                @if ($errors->has('email'))
                 <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('last_name') }}</strong>
+                    <strong>{{ $errors->first('email') }}</strong>
                 </span>
                 @endif
             </div>

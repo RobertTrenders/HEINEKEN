@@ -20,53 +20,7 @@
   </div>
 </section>
 
-<script>
-  function checkValidDate() {
-    let day = $('#day').val();
-    let month = $('#month').val();
-    let year = $('#year').val();
-
-    try {
-      if ((parseInt(day) > 0 && parseInt(day) <= 31) && (parseInt(month) > 0 && parseInt(month) < 13) && (parseInt(year) > 1940 && parseInt(day) < 2023)) {
-        const date1 = new Date(`${month}/${day}/${year}`);
-        var today = new Date();
-        const diffTime = Math.abs(today - date1);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
-
-        if (diffDays > 6570) {
-          $('.btn-continue').addClass('active')
-        }
-      }
-
-    } catch (e) {
-
-    }
-
-  }
-
-  function checkAge() {
-    event.preventDefault();
-
-    let day = $('#day').val();
-    let month = $('#month').val();
-    let year = $('#year').val();
-
-    try {
-      if ((parseInt(day) > 0 && parseInt(day) <= 31) && (parseInt(month) > 0 && parseInt(month) < 13) && (parseInt(year) > 1940 && parseInt(day) < 2023)) {
-        const date1 = new Date(`${month}/${day}/${year}`);
-        var today = new Date();
-        const diffTime = Math.abs(today - date1);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
-
-        if (diffDays > 6570) {
-          $('#ageForm').submit();
-        }
-      }
-
-    } catch (e) {
-
-    }
-  }
-</script>
+<script src="{{ asset('/js/onlyNumber.js') }}"></script>
+<script src="{{ asset('/assets/js/frontend/age/index.js') }}"></script>
 
 @endsection

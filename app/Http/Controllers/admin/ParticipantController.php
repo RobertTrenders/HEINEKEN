@@ -81,8 +81,10 @@ class ParticipantController extends Controller
       DB::raw('SET SESSION TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;');
 
       $aParticipants = DB::table('participant as p')
+        ->join('team as t', 'p.team_id', '=', 't.id')
         ->whereNull('p.deleted_at')
-        ->select('p.*')
+        ->whereNull('t.deleted_at')
+        ->select('p.*', 't.name as team')
         ->orderBy($columnName, $columnSortOrder)
         ->skip($start)
         ->take($rowsPerPage)
@@ -104,15 +106,17 @@ class ParticipantController extends Controller
       DB::raw('SET SESSION TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;');
 
       $aParticipants = DB::table('participant as p')
+        ->join('team as t', 'p.team_id', '=', 't.id')
         ->whereNull('p.deleted_at')
+        ->whereNull('t.deleted_at')
         ->where(function ($query) use ($searchValue) {
           $query->where('p.name', 'like', '%' . $searchValue . '%')
-            ->orWhere('p.last_name', 'like', '%' . $searchValue . '%')
+            ->orWhere('p.email', 'like', '%' . $searchValue . '%')
             ->orWhere('p.dni', 'like', '%' . $searchValue . '%')
             ->orWhere('p.phone', 'like', '%' . $searchValue . '%')
-            ->orWhere('p.team', 'like', '%' . $searchValue . '%');
+            ->orWhere('t.name', 'like', '%' . $searchValue . '%');
         })
-        ->select('p.*')
+        ->select('p.*', 't.name as team')
         ->orderBy($columnName, $columnSortOrder)
         ->skip($start)
         ->take($rowsPerPage)
@@ -134,13 +138,15 @@ class ParticipantController extends Controller
       DB::raw('SET SESSION TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;');
 
       $totalRecordsFilter = DB::table('participant as p')
+        ->join('team as t', 'p.team_id', '=', 't.id')
         ->whereNull('p.deleted_at')
+        ->whereNull('t.deleted_at')
         ->where(function ($query) use ($searchValue) {
           $query->where('p.name', 'like', '%' . $searchValue . '%')
-            ->orWhere('p.last_name', 'like', '%' . $searchValue . '%')
+            ->orWhere('p.email', 'like', '%' . $searchValue . '%')
             ->orWhere('p.dni', 'like', '%' . $searchValue . '%')
             ->orWhere('p.phone', 'like', '%' . $searchValue . '%')
-            ->orWhere('p.team', 'like', '%' . $searchValue . '%');
+            ->orWhere('t.name', 'like', '%' . $searchValue . '%');
         })
         ->count();
 
@@ -162,11 +168,11 @@ class ParticipantController extends Controller
       $aParticipantsData[] = array(
         "id" => $oParticipant->id,
         "name" => $oParticipant->name,
-        "last_name" => $oParticipant->last_name,
+        "email" => $oParticipant->email,
         "dni" => $oParticipant->dni,
         "phone" => $oParticipant->phone,
         "team" => $oParticipant->team,
-        "created_at" => date('d-m-Y H:i:s', strtotime($oParticipant->created_at))
+        "created_at" => date('d/m/Y H:i:s', strtotime($oParticipant->created_at))
       );
     }
 
@@ -186,7 +192,7 @@ class ParticipantController extends Controller
       "Expires" => "0"
     );
 
-    $columns = array('Id', 'Name', 'Last Name', 'DNI', 'Phone', 'Team', 'Objective', 'Date');
+    $columns = array('Id', 'Nombre', 'Email', 'DNI', 'Telefono', 'Team', '¿Qué harías para ganarte el viaje la final de la UEFA Champions League?', 'Fecha');
 
     $callback = function () use ($columns) {
 
@@ -199,8 +205,10 @@ class ParticipantController extends Controller
         DB::raw('SET SESSION TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;');
 
         $aParticipants = DB::table('participant as p')
+          ->join('team as t', 'p.team_id', '=', 't.id')
           ->whereNull('p.deleted_at')
-          ->select('p.*')
+          ->whereNull('t.deleted_at')
+          ->select('p.*', 't.name as team')
           ->orderBy('p.created_at', 'asc')
           ->chunk(50000, function ($aParticipants) use ($file) {
             foreach ($aParticipants as $oParticipant) {
@@ -209,7 +217,7 @@ class ParticipantController extends Controller
 
               $row['id'] = $oParticipant->id;
               $row['name'] = $oParticipant->name;
-              $row['last_name'] = $oParticipant->last_name;
+              $row['email'] = $oParticipant->email;
               $row['dni'] = $oParticipant->dni;
               $row['phone'] = $oParticipant->phone;
               $row['team'] = $oParticipant->team;

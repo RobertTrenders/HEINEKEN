@@ -23,6 +23,7 @@ section.register form {
 
 section.register form input[type="text"],
 section.register form input[type="number"],
+section.register form input[type="email"],
 section.register form textarea {
   background-color: #004815;
   padding: 25px 10px;
@@ -48,6 +49,7 @@ section.register form textarea {
 }
 section.register form input[type="text"]:focus,
 section.register form input[type="number"]:focus,
+section.register form input[type="email"]:focus,
 section.register form textarea:focus,
 section.register form select:focus {
   background-color: #004815;
@@ -55,6 +57,7 @@ section.register form select:focus {
 
 section.register form input[type="text"]::placeholder,
 section.register form input[type="number"]::placeholder,
+section.register form input[type="email"]::placeholder,
 section.register form textarea::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #fff;
@@ -63,6 +66,7 @@ section.register form textarea::placeholder {
 
 section.register form input[type="text"]::-ms-input-placeholder,
 section.register form input[type="number"]::-ms-input-placeholder,
+section.register form input[type="email"]::-ms-input-placeholder,
 section.register form textarea::-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: #fff;

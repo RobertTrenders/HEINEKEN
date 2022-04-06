@@ -5,20 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ParticipantModel extends Model
+class TeamModel extends Model
 {
 
   use SoftDeletes;
 
-  protected $table = 'participant';
+  protected $table = 'team';
 
   protected $fillable = [
     'name',
-    'last_name',
-    'dni',
-    'phone',
-    'team_id',
-    'objective',
     'created_at',
     'updated_at',
   ];

@@ -4,6 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
+use App\Rules\ValidEmail;
+use App\Rules\ValidDNI;
 
 class ParticipantRequest extends FormRequest
 {
@@ -27,8 +29,8 @@ class ParticipantRequest extends FormRequest
         $aRules = [
             'team' => 'required',
             'name' => 'required|min:3|max:60',
-            'last_name' => 'required|min:3|max:60',
-            'dni' => 'required|numeric|digits_between:8,8',
+            'email' => ['required', 'email:filter', 'max:60', new ValidEmail($this->email)],
+            'dni' => ['required', 'numeric', 'digits_between:8,8', new ValidDNI($this->dni)],
             'phone' => 'required|numeric|digits_between:10,10',
             'objective' => 'required|min:3|max:255',
             'terms' => 'required|boolean',
@@ -44,9 +46,8 @@ class ParticipantRequest extends FormRequest
             'name.required' => 'Campo obligatorio.',
             'name.min:3' => 'Mínimo 3 caracteres.',
             'name.max:60' => 'Máximo 60 caracteres.',
-            'last_name.required' => 'Campo obligatorio.',
-            'last_name.min:3' => 'Mínimo 3 caracteres.',
-            'last_name.max:60' => 'Máximo 60 caracteres.',
+            'email.required' => 'Campo obligatorio.',
+            'email.email' => 'Email inválido.',
             'dni.required' => 'Campo obligatorio.',
             'dni.numeric' => 'DNI inválido',
             'dni.digits_between' => 'DNI inválido',

@@ -1,5 +1,5 @@
 @extends('frontend/layouts.app')
-@include('frontend/layouts.header')
+
 @section('content')
 <link rel="stylesheet" href="{{ asset('/css/frontend/thanks.css') }}">
 

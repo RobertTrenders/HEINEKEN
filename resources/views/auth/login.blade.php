@@ -19,7 +19,7 @@
                     <span class="invalid-feedback" role="alert">
                         <strong>Credenciales no v&aacute;lidas.</strong>
                     </span>
-                    @endif  
+                    @endif
                 </div>
 
                 <div class="form-group">
@@ -46,7 +46,7 @@
                 <button type="submit" class="btn btn-primary btn-block">
                     {{ __('Login') }}
                 </button>
-                
+
             </form>
 
             <div class="text-center">
