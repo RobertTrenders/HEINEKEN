@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\ParticipantController as AdminParticipantControll
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\ParticipantController;
 use App\Http\Controllers\frontend\AgeController;
+use App\Http\Controllers\frontend\TermsController;
 /*
   |--------------------------------------------------------------------------
   | Web Routes
@@ -59,3 +60,5 @@ Route::middleware(['checkguest'])->group(function () {
     Route::get('age', [AgeController::class, 'index'])->name('age');
     Route::post('age_store', [AgeController::class, 'store'])->name('age_store');
 });
+
+Route::get('terms', [TermsController::class, 'index'])->name('terms');

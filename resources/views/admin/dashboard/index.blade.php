@@ -10,7 +10,7 @@
             <li class="breadcrumb-item">
                 <a href="{{ route('dashboard.index') }}">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Resume</li>
+            <li class="breadcrumb-item active">Resumen</li>
         </ol>
 
         <!-- Example DataTables Card-->
@@ -33,13 +33,13 @@
                                     <div class="card-body-icon">
                                         <i class="fas fa-users"></i>
                                     </div>
-                                    <div class="mr-5">Total
+                                    <div class="mr-5">Participantes totales
                                         <br />
                                         <span class="dashboard_totals">{{ $totalParticipants }}</span>
                                     </div>
                                 </div>
                                 <a class="card-footer text-white clearfix small z-1" href="{{ route('participant_list.index') }}">
-                                    <span class="float-left">Details</span>
+                                    <span class="float-left">Detalle</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
                                     </span>

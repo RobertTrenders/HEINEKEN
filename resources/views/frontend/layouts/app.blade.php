@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="{{ asset('/css/frontend/general.css') }}" crossorigin="anonymous">
     <!-- <script src="{{ asset('/js/frontend/general.js') }}"></script> -->
 
+    <!-- ReCaptcha -->
+    {!! htmlScriptTagJsApi() !!}
+
     <style>
         @font-face {
             font-family: "Heineken";

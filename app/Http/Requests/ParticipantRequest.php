@@ -34,6 +34,7 @@ class ParticipantRequest extends FormRequest
             'phone' => 'required|numeric|digits_between:10,10',
             'objective' => 'required|min:3|max:255',
             'terms' => 'required|boolean',
+            'g-recaptcha-response' => ['recaptcha'],
         ];
 
         return $aRules;

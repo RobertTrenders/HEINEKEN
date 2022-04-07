@@ -65,13 +65,14 @@
             </div>
 
             <div class="form-check text-center" id="checkbox-terms">
-                <input class="form-check-input {{ $errors->has('terms') ? ' is-invalid' : '' }}" type="checkbox" value="1" name="terms" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                    Acepto <a href="">Bases y Condiciones</a>
+                <input class="form-check-input {{ $errors->has('terms') ? ' is-invalid' : '' }}" type="checkbox" value="1" name="terms" id="termsCheck">
+                <label class="form-check-label" for="termsCheck">
+                    Acepto <a target="_blank" href="{{ route('terms') }}">Bases y Condiciones</a>
                 </label>
             </div>
             <div class="text-center">
-                <button type="submit" class="btn btn-submit">Registrarme</button>
+                <!-- <button type="submit" class="btn btn-submit">Registrarme</button> -->
+                {!! htmlFormButton('Registrarme', ['class' => 'btn btn-submit']) !!}
             </div>
         </form>
     </div>

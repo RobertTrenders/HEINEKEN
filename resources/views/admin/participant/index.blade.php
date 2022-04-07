@@ -8,17 +8,17 @@
     <!-- Breadcrumbs-->
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="">Participants</a>
+        <a href="">Participantes</a>
       </li>
-      <li class="breadcrumb-item active">List</li>
+      <li class="breadcrumb-item active">Lista</li>
     </ol>
 
     <!-- Example DataTables Card-->
     <div class="card mb-3">
 
       <div class="card-header">
-        <i class="fa fa-table"></i> Participants
-        <button type="button" id="export_btn" class="btn btn-success createButton ml-5">Download <i class="fas fa-file-excel"></i></button>
+        <i class="fa fa-table"></i> Participantes
+        <button type="button" id="export_btn" class="btn btn-success createButton ml-5">Descargar <i class="fas fa-file-excel"></i></button>
       </div>
 
       <div class="card-body">
@@ -29,24 +29,24 @@
             <thead>
               <tr>
                 <th class="dt-center">Id</th>
-                <th class="dt-center">Name</th>
-                <th class="dt-center">Last Name</th>
+                <th class="dt-center">Nombre</th>
+                <th class="dt-center">Email</th>
                 <th class="dt-center">DNI</th>
-                <th class="dt-center">Phone</th>
-                <th class="dt-center">Team</th>
-                <th class="dt-center">Date</th>
+                <th class="dt-center">Teléfono</th>
+                <th class="dt-center">Equipo</th>
+                <th class="dt-center">Fecha</th>
               </tr>
             </thead>
 
             <tfoot>
               <tr>
                 <th class="dt-center">Id</th>
-                <th class="dt-center">Name</th>
-                <th class="dt-center">Last Name</th>
+                <th class="dt-center">Nombre</th>
+                <th class="dt-center">Email</th>
                 <th class="dt-center">DNI</th>
-                <th class="dt-center">Phone</th>
-                <th class="dt-center">Team</th>
-                <th class="dt-center">Date</th>
+                <th class="dt-center">Teléfono</th>
+                <th class="dt-center">Equipo</th>
+                <th class="dt-center">Fecha</th>
               </tr>
             </tfoot>
 
@@ -55,7 +55,7 @@
 
       </div>
 
-      <div class="card-footer small text-muted">Click on column name to reorder.</div>
+      <div class="card-footer small text-muted">Click en las columnas para reordenar.</div>
 
     </div>
   </div>

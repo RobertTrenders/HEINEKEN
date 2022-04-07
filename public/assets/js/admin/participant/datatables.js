@@ -13,6 +13,22 @@ $(document).ready(function () {
       { data: "created_at", class: "dt-center" },
     ],
     pageLength: 100,
+    language: {
+      lengthMenu: "Mostrar _MENU_ registros por pagina",
+      zeroRecords: "No hay registros disponibles",
+      info: "Mostrando pagina _PAGE_ de _PAGES_",
+      infoEmpty: "No hay registros disponibles",
+      infoFiltered: "(Filtrado de un total de _MAX_ registros)",
+      search: "Buscar:",
+      paginate: {
+        first: "Primera",
+        last: "Ultima",
+        next: "Siguiente",
+        previous: "Previa",
+      },
+      loadingRecords: "Cargando...",
+      processing: "Procesando...",
+    },
   });
 
   $("#dataTable_participant_filter input").unbind();

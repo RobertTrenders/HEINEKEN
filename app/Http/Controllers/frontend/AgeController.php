@@ -33,11 +33,14 @@ class AgeController extends Controller
         if ($this->isValidDate($request['day'], $request['month'], $request["year"])) {
             session(['isAdult' => true]);
         }
+
         return redirect()->route('home');
     }
 
     private function isValidDate($day, $month, $year)
     {
+        $isValid = false;
+
         if ((intval($day) > 0 && intval($day) <= 31) && (intval($month) > 0 && intval($month) < 13) && (intval($year) > 1940 && intval($day) < 2023)) {
 
             $date1 = $year . "-" . $month . "-" . $day;
@@ -48,9 +51,10 @@ class AgeController extends Controller
             $years = floor($diff / (365 * 60 * 60 * 24));
 
             if ($years > 18) {
-                return true;
+                $isValid = true;
             }
         }
-        return false;
+
+        return $isValid;
     }
 }
