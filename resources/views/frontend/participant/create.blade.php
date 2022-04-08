@@ -24,7 +24,7 @@
                 @endif
             </div>
             <div class="form-group">
-                <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" id="name" value="{{ old('name') }}" name="name" placeholder="Nombre y Apellido">
+                <input type="text" maxlength="60" minlength="3" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" id="name" value="{{ old('name') }}" name="name" placeholder="Nombre y Apellido">
                 @if ($errors->has('name'))
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('name') }}</strong>
@@ -32,7 +32,7 @@
                 @endif
             </div>
             <div class="form-group">
-                <input type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" value="{{ old('email') }}" name="email" placeholder="Email">
+                <input type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" maxlength="60" value="{{ old('email') }}" name="email" placeholder="Email">
                 @if ($errors->has('email'))
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('email') }}</strong>
@@ -56,7 +56,7 @@
                 @endif
             </div>
             <div class="form-group">
-                <textarea name="objective" id="" cols="30" class="form-control {{ $errors->has('objective') ? ' is-invalid' : '' }}" placeholder="¿Qué harías para ganarte el viaje la final de la UEFA Champions League?" rows="10">{{ old('objective') }}</textarea>
+                <textarea name="objective" id="" maxlength="255" minlength="3" cols="30" class="form-control {{ $errors->has('objective') ? ' is-invalid' : '' }}" placeholder="¿Qué harías para ganarte el viaje la final de la UEFA Champions League?" rows="10">{{ old('objective') }}</textarea>
                 @if ($errors->has('objective'))
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('objective') }}</strong>
@@ -65,13 +65,17 @@
             </div>
 
             <div class="form-check text-center" id="checkbox-terms">
-                <input class="form-check-input {{ $errors->has('terms') ? ' is-invalid' : '' }}" type="checkbox" value="1" name="terms" id="termsCheck">
+                <input class="form-check-input {{ $errors->has('terms') ? ' is-invalid' : '' }}" type="checkbox" @if(old('terms')==1) checked @endif value="1" name="terms" id="termsCheck">
                 <label class="form-check-label" for="termsCheck">
                     Acepto <a target="_blank" href="{{ route('terms') }}">Bases y Condiciones</a>
                 </label>
+                @if ($errors->has('terms'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('terms') }}</strong>
+                </span>
+                @endif
             </div>
             <div class="text-center">
-                <!-- <button type="submit" class="btn btn-submit">Registrarme</button> -->
                 {!! htmlFormButton('Registrarme', ['class' => 'btn btn-submit']) !!}
             </div>
         </form>

@@ -17,8 +17,14 @@
       </form>
       <a href="" onclick="checkAge()" class="btn btn-continue">Ingresar</a>
     </div>
+    <div class="text-center mt-2">
+      <span class="invalid-feedback" role="alert">
+        <strong>Debes tener al menos 18 años para ingresar.</strong>
+      </span>
+    </div>
   </div>
 </section>
+
 
 <script src="{{ asset('/js/onlyNumber.js') }}"></script>
 <script src="{{ asset('/assets/js/frontend/age/index.js') }}"></script>

@@ -45,10 +45,11 @@ class ParticipantRequest extends FormRequest
         $aMessages = [
             'team.required' => 'Campo obligatorio.',
             'name.required' => 'Campo obligatorio.',
-            'name.min:3' => 'Mínimo 3 caracteres.',
-            'name.max:60' => 'Máximo 60 caracteres.',
+            'name.min' => 'Mínimo 3 caracteres.',
+            'name.max' => 'Máximo 60 caracteres.',
             'email.required' => 'Campo obligatorio.',
             'email.email' => 'Email inválido.',
+            'email.max' => 'Máximo 60 caracteres.',
             'dni.required' => 'Campo obligatorio.',
             'dni.numeric' => 'DNI inválido',
             'dni.digits_between' => 'DNI inválido',
@@ -56,8 +57,10 @@ class ParticipantRequest extends FormRequest
             'phone.numeric' => 'Teléfono inválido.',
             'phone.digits_between' => 'Teléfono inválido.',
             'objective.required' => 'Campo obligatorio.',
-            'objective.min:3' => 'Mínimo 3 caracteres.',
-            'objective.max:255' => 'Máximo 255 caracteres.',
+            'objective.min' => 'Mínimo 3 caracteres.',
+            'objective.max' => 'Máximo 255 caracteres.',
+            'terms.required' => 'Debes aceptar las bases y condiciones',
+            'terms.boolean' => 'Debes aceptar las bases y condiciones',
         ];
 
         return $aMessages;

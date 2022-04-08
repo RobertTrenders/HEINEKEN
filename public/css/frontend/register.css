@@ -116,4 +116,13 @@ section.register form .btn-submit {
   border-color: #dc3545 !important;
 }
 @media screen and (max-width: 992px) {
+
+  section.register form #checkbox-terms input {
+    width: 15px;
+    height: 15px;
+    margin-left: -25px !important;
+  }
+  section.register form #checkbox-terms {
+    font-size: 17px;  
+  }
 }

@@ -55,6 +55,9 @@ Route::middleware(['checkguest'])->group(function () {
         Route::get('home', [HomeController::class, 'index'])->name('home');
         Route::get('register', [ParticipantController::class, 'create'])->name('register');
         Route::post('register_store', [ParticipantController::class, 'store'])->name('register_store');
+        Route::get('register_store', function () {
+            return redirect()->route('home');
+        })->name('register_store');
     });
 
     Route::get('age', [AgeController::class, 'index'])->name('age');

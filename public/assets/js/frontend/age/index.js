@@ -11,18 +11,18 @@ $("#year").keypress(function (e) {
 });
 
 function isAdult(day, month, year) {
+  var today = new Date();
   try {
     if (
       parseInt(day) > 0 &&
       parseInt(day) <= 31 &&
       parseInt(month) > 0 &&
       parseInt(month) < 13 &&
-      parseInt(year) > 1940 &&
-      parseInt(day) < 2023
+      parseInt(year) > today.getFullYear() - 110 &&
+      parseInt(year) < today.getFullYear()
     ) {
-      const date1 = new Date(`${month}/${day}/${year}`);
-      var today = new Date();
-      const diffTime = Math.abs(today - date1);
+      const birthDay = new Date(`${month}/${day}/${year}`);
+      const diffTime = Math.abs(today - birthDay);
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
       if (diffDays > 6570) {
@@ -42,6 +42,7 @@ function checkValidDate() {
 
   if (isAdult(day, month, year)) {
     $(".btn-continue").addClass("active");
+    $(".invalid-feedback").hide();
   } else {
     $(".btn-continue").removeClass("active");
   }
@@ -56,5 +57,7 @@ function checkAge() {
 
   if (isAdult(day, month, year)) {
     $("#ageForm").submit();
+  } else {
+    $(".invalid-feedback").show();
   }
 }

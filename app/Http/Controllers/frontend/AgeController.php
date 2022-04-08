@@ -37,20 +37,15 @@ class AgeController extends Controller
         return redirect()->route('home');
     }
 
-    private function isValidDate($day, $month, $year)
+    public function isValidDate($day, $month, $year)
     {
         $isValid = false;
 
-        if ((intval($day) > 0 && intval($day) <= 31) && (intval($month) > 0 && intval($month) < 13) && (intval($year) > 1940 && intval($day) < 2023)) {
+        if (checkdate(intval($day), intval($month), intval($year))) {
 
-            $date1 = $year . "-" . $month . "-" . $day;
-            $date2 = date('Y-m-d');
+            $birthDay = $year . "-" . str_pad($month, 2, '0', STR_PAD_LEFT) . "-" . str_pad($day, 2, '0', STR_PAD_LEFT);
 
-            $diff = abs(strtotime($date2) - strtotime($date1));
-
-            $years = floor($diff / (365 * 60 * 60 * 24));
-
-            if ($years > 18) {
+            if ($birthDay < date('Y-m-d', strtotime('-18 years'))) {
                 $isValid = true;
             }
         }

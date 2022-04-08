@@ -16,7 +16,7 @@ class ParticipantController extends Controller
      */
     public function create()
     {
-        $aTeams = TeamModel::get();
+        $aTeams = TeamModel::orderBy('name', 'ASC')->get();
         return view('frontend/participant.create', compact('aTeams'));
     }
 

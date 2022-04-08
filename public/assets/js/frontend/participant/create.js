@@ -38,6 +38,6 @@ $("form").on("paste", "input[type=email]", function (e) {
   e.preventDefault();
 });
 
-$("#participant_form").submit(function (event) {
+$(".btn-submit").click(function () {
   $("#ajax-loader").show();
 });
