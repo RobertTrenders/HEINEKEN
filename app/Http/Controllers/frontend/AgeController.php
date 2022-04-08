@@ -37,11 +37,11 @@ class AgeController extends Controller
         return redirect()->route('home');
     }
 
-    public function isValidDate($day, $month, $year)
+    private function isValidDate($day, $month, $year)
     {
         $isValid = false;
 
-        if (checkdate(intval($day), intval($month), intval($year))) {
+        if (checkdate(intval($month), intval($day), intval($year))) {
 
             $birthDay = $year . "-" . str_pad($month, 2, '0', STR_PAD_LEFT) . "-" . str_pad($day, 2, '0', STR_PAD_LEFT);
 
