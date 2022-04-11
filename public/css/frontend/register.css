@@ -104,14 +104,19 @@ section.register form #checkbox-terms input {
 }
 
 section.register form .btn-submit {
-  background-color: #fff;
-  color: #006e26;
+  /* background-color: #fff;
+  color: #006e26; */
+  background-color: hsla(0,0%,100%,.5);
+  color: #fff;
   border-radius: 0;
   padding: 12.5px 50px;
   margin: 30px auto;
   text-align: center;
 }
-
+section.register form .btn-submit:hover{
+  background-color: #fff;
+  color: #646464;
+}
 .form-control.is-invalid{
   border-color: #dc3545 !important;
 }

@@ -1,5 +1,5 @@
 $("#phone").keypress(function (e) {
-  return onlyNumber(e, this, 10);
+  return onlyNumber(e, this, 13);
 });
 
 $("#dni").keypress(function (e) {

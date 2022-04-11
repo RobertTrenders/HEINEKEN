@@ -81,5 +81,4 @@
     </div>
 </section>
 
-@include('frontend/layouts.footer')
 @endsection

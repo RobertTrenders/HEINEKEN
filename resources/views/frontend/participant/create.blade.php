@@ -5,7 +5,7 @@
 
 <section class="register">
     <div class="container">
-        <h1>¡Ingresá tus datos y empezá a participar!</h1>
+        <h1>¡Ingresá tus datos y participá!</h1>
         <form action="{{ route('register_store') }}" method="POST" role="form" enctype="multipart/form-data" id="participant_form">
             @csrf
             <div class="form-group ">
@@ -48,7 +48,7 @@
                 @endif
             </div>
             <div class="form-group">
-                <input type="number" class="form-control {{ $errors->has('phone') ? ' is-invalid' : '' }}" id="phone" name="phone" value="{{ old('phone') }}" placeholder="Telefono">
+                <input type="number" class="form-control {{ $errors->has('phone') ? ' is-invalid' : '' }}" id="phone" name="phone" value="{{ old('phone') }}" placeholder="Telefono (Cod. Area y Nro.)">
                 @if ($errors->has('phone'))
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('phone') }}</strong>

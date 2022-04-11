@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ Session::token() }}">
-    <title>Heieneken</title>
+    <title>Heineken</title>
     <link rel="shortcut icon" type="image/png" href="{{ asset('/favicon.ico') }}" />
     <!-- Bootstrap core CSS-->
     <link rel="stylesheet" href="{{ asset('/vendor/bootstrap.min.css') }}" crossorigin="anonymous">
