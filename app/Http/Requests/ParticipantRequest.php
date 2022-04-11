@@ -31,7 +31,7 @@ class ParticipantRequest extends FormRequest
             'name' => 'required|min:3|max:60',
             'email' => ['required', 'email:filter', 'max:60', new ValidEmail($this->email)],
             'dni' => ['required', 'numeric', 'digits_between:8,8', new ValidDNI($this->dni)],
-            'phone' => 'required|numeric|digits_between:10,10',
+            'phone' => 'required|numeric|digits_between:10,13',
             'objective' => 'required|min:3|max:255',
             'terms' => 'required|boolean',
             'g-recaptcha-response' => ['recaptcha'],
