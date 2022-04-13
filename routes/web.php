@@ -29,6 +29,11 @@ Route::get('/admin', function () {
     return redirect('/admin/dashboard');
 });
 
+Route::get('champions', function () {
+    return redirect('/home');
+});
+
+
 Auth::routes();
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
